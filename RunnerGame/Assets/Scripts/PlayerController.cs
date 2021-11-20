@@ -9,7 +9,10 @@ public class PlayerController : MonoBehaviour
     public float forwardSpeed;
 
     private int desiredLane = 1; //0:left 1:middle 2:right
-    public float laneDistance = 4; //the distance between two lanes
+    public float laneDistance = 2; //the distance between two lanes
+
+    public float jumpForce;
+    public float Gravity = -20;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,18 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         direction.z = forwardSpeed;
+
+        if(controller.isGrounded)
+        {
+            direction.y = -1;
+            if(Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Jump();
+            }
+        }else{
+            direction.y += Gravity * Time.deltaTime;
+        }
+        
         //gather input lanes
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -45,12 +60,17 @@ public class PlayerController : MonoBehaviour
             targetPosition += Vector3.right * laneDistance;
         }
         
-        transform.position = targetPosition;
+        transform.position = Vector3.Lerp(transform.position,targetPosition, 150*Time.deltaTime);
 
     }
 
     private void FixedUpdate()
     {
         controller.Move(direction*Time.fixedDeltaTime);
+    }
+
+    private void Jump()
+    {
+        direction.y = jumpForce;
     }
 }
