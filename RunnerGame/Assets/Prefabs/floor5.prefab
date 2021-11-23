@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8862335098857908213}
   m_Layer: 0
-  m_Name: floor5 1
+  m_Name: floor5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,17 +359,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8473b1b4b270c464d83885a16e6eedda,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.8959432
+      value: -4.83
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8473b1b4b270c464d83885a16e6eedda,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.7998831
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8473b1b4b270c464d83885a16e6eedda,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.4595375
+      value: 14.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8473b1b4b270c464d83885a16e6eedda,
         type: 3}
