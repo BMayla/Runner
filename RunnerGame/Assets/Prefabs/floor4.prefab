@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5186102948308276935}
   m_Layer: 0
-  m_Name: floor4 1
+  m_Name: floor4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,6 +242,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Short barrier (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5312399366144608654, guid: 10065376386373b45ada96704875bc55,
+        type: 3}
+      propertyPath: m_TagString
+      value: obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10065376386373b45ada96704875bc55, type: 3}
 --- !u!4 &7516528842913726290 stripped
@@ -332,6 +337,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Short barrier (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5312399366144608654, guid: 10065376386373b45ada96704875bc55,
+        type: 3}
+      propertyPath: m_TagString
+      value: obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10065376386373b45ada96704875bc55, type: 3}
 --- !u!4 &7982226239609936232 stripped
@@ -421,6 +431,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Short barrier
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312399366144608654, guid: 10065376386373b45ada96704875bc55,
+        type: 3}
+      propertyPath: m_TagString
+      value: obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10065376386373b45ada96704875bc55, type: 3}
@@ -2868,6 +2883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Traffic cone 1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621469832154968300, guid: fc268878dfe556e47ae2f2f2602821a2,
+        type: 3}
+      propertyPath: m_TagString
+      value: obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 5433895312889981526, guid: fc268878dfe556e47ae2f2f2602821a2,
         type: 3}

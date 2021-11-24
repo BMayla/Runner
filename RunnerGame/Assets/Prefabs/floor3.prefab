@@ -81,6 +81,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Traffic cone 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4621469832154968300, guid: fc268878dfe556e47ae2f2f2602821a2,
+        type: 3}
+      propertyPath: m_TagString
+      value: obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 5433895312889981526, guid: fc268878dfe556e47ae2f2f2602821a2,
         type: 3}
       propertyPath: m_RootOrder
@@ -246,6 +251,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Traffic cone 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4621469832154968300, guid: fc268878dfe556e47ae2f2f2602821a2,
+        type: 3}
+      propertyPath: m_TagString
+      value: obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 5433895312889981526, guid: fc268878dfe556e47ae2f2f2602821a2,
         type: 3}
       propertyPath: m_RootOrder
@@ -335,6 +345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Traffic cone 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621469832154968300, guid: fc268878dfe556e47ae2f2f2602821a2,
+        type: 3}
+      propertyPath: m_TagString
+      value: obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 5433895312889981526, guid: fc268878dfe556e47ae2f2f2602821a2,
         type: 3}
