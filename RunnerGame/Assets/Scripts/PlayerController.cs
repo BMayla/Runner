@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!PlayerManager.isGameStarted /*|| PlayerManager.gameOver*/)
+            return;// the lpayer will nit able to move
+
         direction.z = forwardSpeed;
 
         if (controller.isGrounded)
@@ -120,6 +123,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!PlayerManager.isGameStarted /*|| PlayerManager.gameOver*/)
+            return; 
         controller.Move(direction * Time.fixedDeltaTime);
     }
 
