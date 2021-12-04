@@ -9,10 +9,16 @@ public class PlayerController : MonoBehaviour
     public float forwardSpeed;
 
     private int desiredLane = 1; //0:left 1:middle 2:right
-    public float laneDistance = 2; //the distance between two lanes
+    public float laneDistance = 4; //the distance between two lanes
 
     public float jumpForce;
     public float Gravity = -20;
+    // public bool isGrounded;
+    // public LayerMask groundLayer;
+    //public Transform groundCheck;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,64 +31,104 @@ public class PlayerController : MonoBehaviour
     {
         direction.z = forwardSpeed;
 
-        if(controller.isGrounded)
-        {
+        if (controller.isGrounded)
+        {/*
             direction.y = -1;
-            if(Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow))   //(isGrounded)
             {
-                Jump();
+                Jupm();
             }
+        
         }else{
+            direction.y += Gravity* Time.deltaTime;
+        }
+
+        //isGrounded = Physics.CheckSphere(groundCheck.position, 0.17f, groundLayer);*/
+
+            //Gather the inputs on which lane we should be
+            /*if (Input.GetKeyDown(KeyCode.RightArrow))   //(isGrounded)
+                    {
+                        desiredLane++;
+                        if (desiredLane == 3)
+                            desiredLane = 2;
+                    }
+                    if (Input.GetKeyDown(KeyCode.LeftArrow))
+                    {
+                        desiredLane--;
+                        if (desiredLane == -1)
+                            desiredLane = 0;
+                    }
+
+            */
+            direction.y = -2;
+            if (SwipeManager.swipeUp)
+            {
+                Jupm();
+            }
+        }
+        else
+        {
             direction.y += Gravity * Time.deltaTime;
         }
-        
-        //gather input lanes
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+
+        //Gather the inputs on which lane we should be
+
+        if (SwipeManager.swipeRight)
         {
             desiredLane++;
-            if(desiredLane == 3)
+            if (desiredLane == 3)
                 desiredLane = 2;
         }
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        if (SwipeManager.swipeLeft)
         {
             desiredLane--;
-            if(desiredLane == -1)
+            if (desiredLane == -1)
                 desiredLane = 0;
         }
 
         //calculate where we should be in the future
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
 
-        if(desiredLane==0)
+        if (desiredLane == 0)
         {
             targetPosition += Vector3.left * laneDistance;
-        }else if(desiredLane==2){
+        }
+        else if (desiredLane == 2)
+        {
             targetPosition += Vector3.right * laneDistance;
         }
+        //transform.position = targetPosition;
 
-        //transform.position = Vector3.Lerp(transform.position,targetPosition, 150*Time.deltaTime);
+        //transform.position = Vector3.Lerp(transform.position,targetPosition, 70*Time.deltaTime);
 
-        if (transform.position != targetPosition)
-        {
-            Vector3 diff = targetPosition - transform.position;
-            Vector3 moveDir = diff.normalized * 30 * Time.deltaTime;
-            if (moveDir.sqrMagnitude < diff.magnitude)
-                controller.Move(moveDir);
-            else
-                controller.Move(diff);
-        }
+        /*
+         * or
+         * controller.center = controller.center;//   the player didn't  pass throw the traficoin it collied with them  */
+
+        if (transform.position == targetPosition)
+            return;
+        Vector3 diff = targetPosition - transform.position;
+        Vector3 moveDir = diff.normalized * 24 * Time.deltaTime;
+        if (moveDir.sqrMagnitude < diff.magnitude)
+            controller.Move(moveDir);
+        else
+            controller.Move(diff);
+
 
     }
+
 
     private void FixedUpdate()
     {
-        controller.Move(direction*Time.fixedDeltaTime);
+        controller.Move(direction * Time.fixedDeltaTime);
     }
 
-    private void Jump()
+    private void Jupm()
     {
         direction.y = jumpForce;
     }
+
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.transform.tag == "obstacle")
@@ -92,3 +138,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
