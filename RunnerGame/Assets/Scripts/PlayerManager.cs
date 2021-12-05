@@ -10,11 +10,13 @@ public class PlayerManager : MonoBehaviour
     public static bool isGameStarted;
     public GameObject startingText;
 
+    public static int score;
     void Start()
     {
         gameOver = false;
         Time.timeScale = 1;
         isGameStarted = false;
+        score = 0;//number of Coin
     }
 
     // Update is called once per frame

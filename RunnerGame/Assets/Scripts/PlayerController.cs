@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public float jumpForce;
     public float Gravity = -20;
+
     // public bool isGrounded;
     // public LayerMask groundLayer;
     //public Transform groundCheck;
